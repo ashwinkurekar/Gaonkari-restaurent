@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --color-charcoal: #201C19;
+  --color-terracotta: #A7472A;
+  --color-saffron: #D6A54D;
+  --color-ivory: #F7F0E5;
+  --color-espresso: #35251F;
+}
+
+/* Custom scrollbar and smooth transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #A7472A;
+  color: #FFFFFF;
+}

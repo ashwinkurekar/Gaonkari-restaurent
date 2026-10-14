@@ -1,0 +1,6 @@
+{
+  "name": "Gaonkari — Royal Saoji & Maharashtrian Dining",
+  "description": "Premium restaurant website demo for Gaonkari Restaurant, Nagpur, Maharashtra, showcasing authentic Saoji culinary heritage and traditional hospitality.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
