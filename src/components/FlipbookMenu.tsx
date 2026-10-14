@@ -21,6 +21,13 @@ import varhadiChickenImg from '../assets/images/varhadi_chicken_curry_1791979324
 import vegThaliImg from '../assets/images/maharashtrian_veg_thali_1791979277992.jpg';
 import kothimbirVadiImg from '../assets/images/kothimbir_vadi_starter_1791980374014.jpg';
 import puranPoliImg from '../assets/images/puran_poli_dessert_1791980374179.jpg';
+import jeeraRiceImg from '../assets/images/jeera_rice_bowl_1791985938474.jpg';
+import icedBeverageImg from '../assets/images/iced_cold_beverage_1791985938817.jpg';
+import kadhaiPaneerImg from '../assets/images/paneer_tikka_kadhai_1791985941385.jpg';
+import masalaPapadImg from '../assets/images/crispy_masala_papad_1791985942231.jpg';
+import tandooriRotiImg from '../assets/images/tandoori_roti_stack_1791985942249.jpg';
+import hakkaNoodlesImg from '../assets/images/hakka_noodles_bowl_1791986004687.jpg';
+import manchowSoupImg from '../assets/images/hot_manchow_soup_1791986006048.jpg';
 
 interface FlipbookMenuProps {
   initialPage?: number;

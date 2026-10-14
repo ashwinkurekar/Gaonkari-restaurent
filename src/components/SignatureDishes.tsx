@@ -1,8 +1,8 @@
 import React from 'react';
 import saojiChickenImg from '../assets/images/saoji_chicken_curry_1791979276649.jpg';
 import saojiMuttonImg from '../assets/images/saoji_mutton_curry_1791979276472.jpg';
-import varhadiChickenImg from '../assets/images/varhadi_chicken_curry_1791979324784.jpg';
-import vegThaliImg from '../assets/images/maharashtrian_veg_thali_1791979277992.jpg';
+import muttonWarhadiImg from '../assets/images/mutton_warhadi_curry_1791986693032.jpg';
+import pithlaZunkaImg from '../assets/images/pithla_bhakri_zunka_1791986529594.jpg';
 import { SafeImage } from './SafeImage.tsx';
 import { Sparkles, ArrowDown } from 'lucide-react';
 
@@ -46,7 +46,7 @@ const dishes: DishItem[] = [
     marathiName: 'मटन वऱ्हाडी',
     description:
       'A true Vidarbha classic simmered with charred shallots, roasted sesame seeds, and fragrant whole spices.',
-    image: varhadiChickenImg,
+    image: muttonWarhadiImg,
     tag: 'Vidarbha Classic · Pg 2',
     price: '399/-',
     portion: 'Plate (Half 629/- · Full 1269/-)',
@@ -57,7 +57,7 @@ const dishes: DishItem[] = [
     marathiName: 'झुणका आणि पिठलं',
     description:
       'Traditional spiced gram flour delicacy tempered with mustard seeds, green chilies, and garlic. Perfect with Bhakar.',
-    image: vegThaliImg,
+    image: pithlaZunkaImg,
     tag: 'Gaonkari Swad · Pg 7',
     price: '249/-',
     portion: 'Zunka 249/- · Pithal 199/-',
