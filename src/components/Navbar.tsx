@@ -3,9 +3,10 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
   onExploreMenu?: () => void;
+  onOpenReservation?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onExploreMenu }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onExploreMenu, onOpenReservation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -21,6 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onExploreMenu }) => {
     { label: 'Home', href: '#hero' },
     { label: 'Our Story', href: '#story' },
     { label: 'Signature Dishes', href: '#dishes' },
+    { label: 'Menu Card', href: '#menu-book' },
     { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -38,10 +40,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onExploreMenu }) => {
     if (onExploreMenu) {
       onExploreMenu();
     } else {
-      const element = document.querySelector('#dishes');
+      const element = document.querySelector('#menu-book');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    }
+  };
+
+  const handleReservationClick = () => {
+    setMobileMenuOpen(false);
+    if (onOpenReservation) {
+      onOpenReservation();
     }
   };
 
@@ -72,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onExploreMenu }) => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
+          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium tracking-wide">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -88,13 +97,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onExploreMenu }) => {
             ))}
           </nav>
 
-          {/* Action Button & Mobile Toggle */}
-          <div className="flex items-center gap-3">
+          {/* Action Buttons & Mobile Toggle */}
+          <div className="flex items-center gap-2.5">
+            {onOpenReservation && (
+              <button
+                onClick={handleReservationClick}
+                className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold tracking-wider uppercase text-[#F7F0E5] bg-[#26201B] hover:bg-[#35251F] border border-[#D6A54D]/40 hover:border-[#D6A54D] rounded-sm transition-all duration-200 cursor-pointer"
+              >
+                <span>Book Table</span>
+              </button>
+            )}
+
             <button
               onClick={handleMenuClick}
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-[#201C19] bg-gradient-to-r from-[#D6A54D] via-[#e2b765] to-[#D6A54D] hover:brightness-105 rounded-sm shadow-md transition-all duration-200 cursor-pointer active:scale-95"
+              className="hidden sm:inline-flex items-center gap-2 px-5 py-2 text-xs font-semibold tracking-wider uppercase text-[#201C19] bg-gradient-to-r from-[#D6A54D] via-[#e2b765] to-[#D6A54D] hover:brightness-105 rounded-sm shadow-md transition-all duration-200 cursor-pointer active:scale-95"
             >
-              <span>Explore Our Menu</span>
+              <span>Menu Card</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
 
@@ -114,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onExploreMenu }) => {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#201C19]/98 border-b border-[#D6A54D]/20 px-6 pt-4 pb-8 backdrop-blur-xl animate-in slide-in-from-top-4 duration-200 shadow-2xl">
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -129,13 +147,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onExploreMenu }) => {
               </a>
             ))}
 
-            <button
-              onClick={handleMenuClick}
-              className="w-full mt-4 flex items-center justify-center gap-2 py-3 text-xs font-semibold tracking-wider uppercase text-[#201C19] bg-[#D6A54D] rounded-sm"
-            >
-              <span>Explore Our Menu</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
+            <div className="pt-2 flex flex-col gap-2">
+              {onOpenReservation && (
+                <button
+                  onClick={handleReservationClick}
+                  className="w-full py-2.5 text-xs font-semibold tracking-wider uppercase text-[#F7F0E5] bg-[#35251F] border border-[#D6A54D]/50 rounded-sm"
+                >
+                  Book a Table
+                </button>
+              )}
+
+              <button
+                onClick={handleMenuClick}
+                className="w-full flex items-center justify-center gap-2 py-3 text-xs font-semibold tracking-wider uppercase text-[#201C19] bg-[#D6A54D] rounded-sm"
+              >
+                <span>View Menu Card</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
       )}

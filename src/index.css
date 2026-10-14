@@ -20,3 +20,27 @@ html {
   background-color: #A7472A;
   color: #FFFFFF;
 }
+
+/* Printable Reservation Slip styles */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  header, footer, main {
+    display: none !important;
+  }
+  #printable-reservation-slip {
+    position: static !important;
+    max-width: 100% !important;
+    background: #FFFFFF !important;
+    color: #111111 !important;
+    border: 1px solid #CCCCCC !important;
+    box-shadow: none !important;
+    padding: 20px !important;
+  }
+  #printable-reservation-slip * {
+    color: #111111 !important;
+    background: transparent !important;
+  }
+}

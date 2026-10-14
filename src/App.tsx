@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
 import { Story } from './components/Story.tsx';
@@ -7,8 +7,11 @@ import { FlipbookMenu } from './components/FlipbookMenu.tsx';
 import { Experience } from './components/Experience.tsx';
 import { Hospitality } from './components/Hospitality.tsx';
 import { Footer } from './components/Footer.tsx';
+import { ReservationModal } from './components/ReservationModal.tsx';
 
 export default function App() {
+  const [isReservationOpen, setIsReservationOpen] = useState(false);
+
   const scrollToMenuBook = () => {
     const el = document.querySelector('#menu-book');
     if (el) {
@@ -25,8 +28,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#201C19] text-[#F7F0E5] font-sans antialiased overflow-x-hidden selection:bg-[#A7472A] selection:text-white">
-      {/* Refined Navigation Bar */}
-      <Navbar onExploreMenu={scrollToMenuBook} />
+      {/* Refined Navigation Bar with Menu & Reservation triggers */}
+      <Navbar
+        onExploreMenu={scrollToMenuBook}
+        onOpenReservation={() => setIsReservationOpen(true)}
+      />
 
       {/* Main Content Area */}
       <main>
@@ -42,7 +48,7 @@ export default function App() {
         {/* C. Signature Dishes Preview */}
         <SignatureDishes />
 
-        {/* D. Interactive 12-Page Flipbook Menu (Phase 2) */}
+        {/* D. Interactive 12-Page Menu Card Book */}
         <section
           id="menu-book"
           className="py-16 sm:py-24 bg-[#181513] border-t border-[#35251F] relative"
@@ -76,7 +82,13 @@ export default function App() {
       </main>
 
       {/* G. Contact & Footer */}
-      <Footer />
+      <Footer onOpenReservation={() => setIsReservationOpen(true)} />
+
+      {/* Phase 4 Table Reservation Modal */}
+      <ReservationModal
+        isOpen={isReservationOpen}
+        onClose={() => setIsReservationOpen(false)}
+      />
     </div>
   );
 }
