@@ -57,12 +57,12 @@ export const Hero: React.FC<HeroProps> = ({ onDiscoverMenu, onExperienceClick })
             <div className="h-px w-10 sm:w-24 bg-gradient-to-l from-transparent via-[#D6A54D]/70 to-[#D6A54D]" />
           </div>
 
-          {/* Grand Marathi Restaurant Name: गांवकरी रेस्टोरेंट */}
+          {/* Grand Marathi Restaurant Name: गांवकरी रेस्टॉरंट */}
           <h1
             style={{ fontFamily: '"Noto Serif Devanagari", "Playfair Display", Georgia, serif' }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7.5rem] font-black tracking-tight leading-tight sm:leading-none drop-shadow-[0_12px_40px_rgba(0,0,0,0.95)] select-none bg-gradient-to-b from-[#FFF8EE] via-[#F5E2BE] to-[#D6A54D] bg-clip-text text-transparent transform hover:scale-[1.01] transition-transform duration-500 py-2 text-center"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7.5rem] font-black tracking-normal leading-[1.3] sm:leading-[1.25] md:leading-[1.22] drop-shadow-[0_12px_40px_rgba(0,0,0,0.95)] select-none bg-gradient-to-b from-[#FFF8EE] via-[#F5E2BE] to-[#D6A54D] bg-clip-text text-transparent transform hover:scale-[1.01] transition-transform duration-500 pt-3 pb-2 sm:pt-6 sm:pb-3 text-center overflow-visible block w-full"
           >
-            गांवकरी रेस्टोरेंट
+            गांवकरी रेस्टॉरंट
           </h1>
 
           {/* English Subtitle Smaller Beneath Marathi Name */}
