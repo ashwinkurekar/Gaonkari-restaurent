@@ -3,6 +3,7 @@
 @theme {
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-devanagari: "Noto Serif Devanagari", "Playfair Display", Georgia, serif;
   --color-charcoal: #201C19;
   --color-terracotta: #A7472A;
   --color-saffron: #D6A54D;

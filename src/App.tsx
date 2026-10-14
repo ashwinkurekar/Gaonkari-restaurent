@@ -52,15 +52,15 @@ export default function App() {
               <div className="inline-flex items-center gap-2 mb-3">
                 <span className="w-6 h-px bg-[#D6A54D]" />
                 <span className="text-xs font-semibold tracking-[0.25em] uppercase text-[#D6A54D]">
-                  Interactive Royal Menu
+                  Original Menu Card
                 </span>
                 <span className="w-6 h-px bg-[#D6A54D]" />
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F7F0E5] leading-tight mb-3">
-                Gaonkari Royal Flipbook Menu
+                Gaonkari Restaurant Menu Card
               </h2>
               <p className="text-sm sm:text-base text-[#F7F0E5]/75 font-light max-w-2xl mx-auto">
-                Explore our comprehensive 12-page traditional dining catalogue in double-page spread on desktop or responsive single-page on mobile. Complete with authentic Marathi Devanagari dish names, spice markers, and organic paper-flip audio.
+                Explore our official 12-page restaurant menu in interactive double-page spread on desktop or responsive single-page on mobile, complete with exact original dishes, official kitchen pricing, and page-turn audio.
               </p>
             </div>
 
