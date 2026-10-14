@@ -17,6 +17,7 @@ import { SafeImage } from './SafeImage.tsx';
 // Image assets mapping for dish photos
 import saojiChickenImg from '../assets/images/saoji_chicken_curry_1791979276649.jpg';
 import saojiMuttonImg from '../assets/images/saoji_mutton_curry_1791979276472.jpg';
+import muttonWarhadiImg from '../assets/images/mutton_warhadi_curry_1791986693032.jpg';
 import varhadiChickenImg from '../assets/images/varhadi_chicken_curry_1791979324784.jpg';
 import vegThaliImg from '../assets/images/maharashtrian_veg_thali_1791979277992.jpg';
 import kothimbirVadiImg from '../assets/images/kothimbir_vadi_starter_1791980374014.jpg';
@@ -28,6 +29,19 @@ import masalaPapadImg from '../assets/images/crispy_masala_papad_1791985942231.j
 import tandooriRotiImg from '../assets/images/tandoori_roti_stack_1791985942249.jpg';
 import hakkaNoodlesImg from '../assets/images/hakka_noodles_bowl_1791986004687.jpg';
 import manchowSoupImg from '../assets/images/hot_manchow_soup_1791986006048.jpg';
+import crispyFishFryImg from '../assets/images/crispy_fish_fry_1791986497329.jpg';
+import tandooriChickenImg from '../assets/images/tandoori_chicken_platter_1791986497078.jpg';
+import chillyChickenImg from '../assets/images/chilly_chicken_starter_1791986497615.jpg';
+import nonvegBiryaniImg from '../assets/images/nonveg_dum_biryani_1791986497731.jpg';
+import vegDumBiryaniImg from '../assets/images/veg_dum_biryani_1791986527964.jpg';
+import dalTadkaImg from '../assets/images/dal_tadka_handi_1791986528560.jpg';
+import pithlaZunkaImg from '../assets/images/pithla_bhakri_zunka_1791986529594.jpg';
+import spicedMatthaImg from '../assets/images/spiced_mattha_buttermilk_1791986528683.jpg';
+import chickenFriedRiceImg from '../assets/images/chicken_fried_rice_1791986570455.jpg';
+import kadhaiMushroomImg from '../assets/images/kadhai_mushroom_masala_1791986571273.jpg';
+import vegManchurianImg from '../assets/images/crispy_veg_manchurian_1791986571961.jpg';
+import frenchFriesImg from '../assets/images/french_fries_basket_1791986572127.jpg';
+import crispyChillyPaneerImg from '../assets/images/crispy_chilly_paneer_1791986631117.jpg';
 
 interface FlipbookMenuProps {
   initialPage?: number;
@@ -117,34 +131,142 @@ export const FlipbookMenu: React.FC<FlipbookMenuProps> = ({
     triggerFlip(direction, target);
   };
 
-  // Helper to get image asset by imageType
+  // Helper to get image asset by imageType with 100% accurate food categories
   const getDishImage = (imageType: string) => {
     switch (imageType) {
-      case 'mutton-curry':
-        return saojiMuttonImg;
+      // Soups (Chicken & Veg Soups)
+      case 'soup':
+      case 'veg-soup':
+      case 'manchow-soup':
+        return manchowSoupImg;
+
+      // Chinese Non-Veg Starters
       case 'chilly-chicken':
       case 'chicken-starter':
+        return chillyChickenImg;
+
+      // Non-Veg Tandoor
       case 'tandoori-chicken':
-        return saojiChickenImg;
-      case 'biryani':
+        return tandooriChickenImg;
+
+      // Non-Veg Chinese Fried Rice & Noodles
       case 'chicken-rice':
+        return chickenFriedRiceImg;
+
+      // Mutton Specialties (Non-Veg)
+      case 'mutton-curry':
+      case 'saoji-mutton':
+        return saojiMuttonImg;
+      case 'mutton-warhadi':
+        return muttonWarhadiImg;
+
+      // Non-Veg Biryani Handi
+      case 'biryani':
+      case 'nonveg-biryani':
+      case 'mutton-biryani':
+      case 'chicken-biryani':
+        return nonvegBiryaniImg;
+
+      // Fish Fry & Seafood (Non-Veg)
+      case 'fish-fry':
+      case 'chilly-fish':
+        return crispyFishFryImg;
+
+      // Chicken Curries (Non-Veg)
+      case 'chicken-curry':
+      case 'saoji-chicken':
+        return saojiChickenImg;
+      case 'varhadi-chicken':
         return varhadiChickenImg;
+
+      // Breads & Rotis
+      case 'roti-stack':
+      case 'tandoori-roti':
+      case 'naan':
+        return tandooriRotiImg;
+
+      // Rice Dishes (Pure Veg) - Filled Jeera Rice!
+      case 'jeera-rice':
+      case 'steam-rice':
+      case 'rice-bowl':
+        return jeeraRiceImg;
+
+      // Dal & Lentils (Pure Veg)
+      case 'dal-tadka':
+      case 'dal-fry':
+        return dalTadkaImg;
+
+      // Paneer Tandoori & Sabjis (Pure Veg)
       case 'paneer-tikka':
-      case 'paneer-tawa':
       case 'kadhai-paneer':
+      case 'malai-kofta':
+        return kadhaiPaneerImg;
+
+      // Paneer Tawa & Chilly Paneer (Pure Veg)
+      case 'paneer-tawa':
       case 'chilly-paneer':
-        return kothimbirVadiImg;
+        return crispyChillyPaneerImg;
+
+      // Traditional Maharashtrian Veg Specialties
       case 'vanga-masala':
       case 'pithla-zunka':
       case 'shev-bhaji':
+        return pithlaZunkaImg;
+
+      // Main Course Veg Curries
       case 'veg-curry':
-      case 'dal-tadka':
+      case 'veg-handi':
         return vegThaliImg;
-      case 'roti-stack':
+
+      // Mushroom Masala (Pure Veg)
+      case 'mushroom-masala':
+      case 'kadhai-mushroom':
+        return kadhaiMushroomImg;
+
+      // Veg Noodles (Pure Veg)
+      case 'veg-noodles':
+      case 'hakka-noodles':
+        return hakkaNoodlesImg;
+
+      // Veg Dum Biryani (Pure Veg)
+      case 'veg-biryani':
+      case 'veg-pulao':
+        return vegDumBiryaniImg;
+
+      // Veg Chinese Starters (Pure Veg)
+      case 'veg-manchurian':
+        return vegManchurianImg;
+
+      case 'french-fries':
+        return frenchFriesImg;
+
+      // Beverages (Cold Drinks, Soda, Water - NEVER food!)
+      case 'cold-drink':
+      case 'beverages':
+      case 'soda':
+        return icedBeverageImg;
+
+      // Papad (Crispy Masala Papad)
       case 'masala-papad':
+      case 'papad':
+        return masalaPapadImg;
+
+      // Salad & Chilled Spiced Buttermilk
+      case 'salad-buttermilk':
+      case 'buttermilk':
+      case 'salad':
+        return spicedMatthaImg;
+
+      // Desserts & Sweets
+      case 'puran-poli':
+      case 'dessert':
         return puranPoliImg;
+
+      case 'kothimbir-vadi':
+        return kothimbirVadiImg;
+
       default:
-        return saojiChickenImg;
+        return jeeraRiceImg;
     }
   };
 

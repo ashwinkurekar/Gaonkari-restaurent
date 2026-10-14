@@ -284,7 +284,7 @@ export const REAL_MENU_PDF_PAGES: MenuPdfPage[] = [
     photoSlots: [
       { position: 'top-right', alt: 'Freshly Baked Roti & Naan Stack', imageType: 'roti-stack' },
       { position: 'mid-left', alt: 'Tomato & Vegetable Soup', imageType: 'veg-soup' },
-      { position: 'bottom-right', alt: 'Steaming Basmati Rice', imageType: 'steam-rice' },
+      { position: 'bottom-right', alt: 'Aromatic Jeera Rice Bowl with Cumin Seeds', imageType: 'jeera-rice' },
     ],
   },
 
