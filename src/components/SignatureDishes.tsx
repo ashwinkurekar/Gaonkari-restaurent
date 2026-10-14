@@ -150,6 +150,17 @@ export const SignatureDishes: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Call to Action to view Flipbook Menu */}
+        <div className="mt-12 text-center">
+          <a
+            href="#menu-book"
+            className="inline-flex items-center gap-2 px-8 py-3.5 text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-[#201C19] bg-[#D6A54D] hover:bg-[#e2b765] rounded-sm transition-all shadow-xl hover:shadow-[#D6A54D]/20 cursor-pointer"
+          >
+            <span>Browse Complete 12-Page Royal Menu Flipbook</span>
+            <Sparkles className="w-4 h-4" />
+          </a>
+        </div>
       </div>
     </section>
   );
